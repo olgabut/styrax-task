@@ -1,35 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+/*
+Zadání je jednoduché, doplňte kód tak, aby splňoval:
+Při změně stavu checkboxu "Světlo svítí" se změní i hodnota range. Checkbox zapnutý -> range nastavit na 100%, checkbox vypnutý -> range nastavit na 0.
+Při změně stavu range "Intenzita světla" se změni i stav checkbox. Pokud je range na nule, bude checkbox vypnutý. V ostatních případech bude checkbox zapnutý.
 
-function App() {
-  const [count, setCount] = useState(0)
+Prostě je to o zprovázání toho checkboxu a range, nic víc v tom nehledejte. :-)
+*/
 
+const App = () => {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <label htmlFor="switch">Světlo svítí</label>
+        <input id="switch" type="checkbox" name="switch" />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div>
+        <label htmlFor="range">Intenzita světla</label>
+        <input id="range" type="range" name="range" min={0} max={100} />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
